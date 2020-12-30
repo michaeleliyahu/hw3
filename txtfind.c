@@ -82,11 +82,11 @@ bool subline(char *str, char *word, char tav)
             }
             if (print_line == true && tav == 'b')
             {
-                for (int j = keep_line; j <= i; j++)
+                for (int j = keep_line+2; j <= i; j++)
                 {
                     putchar(*(str + j));
                 }
-                // printf("\n");
+                 printf("\n");
             }
             keep_line = i + 1;
             place = 0;
@@ -94,6 +94,6 @@ bool subline(char *str, char *word, char tav)
             print_line = false;
         }
     }
-     printf("\n");
+    //  printf("\n");
     return false;
 }

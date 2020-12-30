@@ -35,14 +35,24 @@ int main()
     // printf("\n");
 
     int i = 0;
+    int j = 0;
+    while (line[i] == ' ')
+    {
+        i++;
+    }
     ////find the word
     while (line[i] != ' ')
     {
-        word[i] = line[i];
+        word[j] = line[i];
+        i++;
+        j++;
+    }
+    char tav;
+
+    while (line[i] == ' ')
+    {
         i++;
     }
-    char tav ;
-    tav = line[i+1];
-
+    tav = line[i];
     subline(str + count + 4, word, tav);
 }
