@@ -51,7 +51,7 @@ bool subline(char *str, char *word, char tav)
         {
             if (substr(word, keep_word, place) == true)
             {
-                if (tav == 'a')
+                if (tav == 'b')
                 {
                     for (int j = 0; j < place; j++)
                     {
@@ -70,7 +70,7 @@ bool subline(char *str, char *word, char tav)
             *(keep_word + place) = *(str + i);
             if (substr(word, keep_word, place) == true)
             {
-                if (tav == 'a')
+                if (tav == 'b')
                 {
                     for (int j = 0; j < place; j++)
                     {
@@ -80,7 +80,7 @@ bool subline(char *str, char *word, char tav)
                 }
                 print_line = true;
             }
-            if (print_line == true && tav == 'b')
+            if (print_line == true && tav == 'a')
             {
                 for (int j = keep_line+2; j <= i; j++)
                 {
