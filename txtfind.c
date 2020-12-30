@@ -9,11 +9,6 @@ return true or false
 */
 bool substr(char *str1, char *str2, int number)
 {
-    // for (int j = 0; j < number; j++)
-    // {
-    //     putchar(str2[j]);
-    // }
-    // printf(" %d\n", number);
     int str1len = strlen(str1); //length of word we looking
 
     int counter = 0;
@@ -61,7 +56,7 @@ void subline(char *str, char *word, char tav)
         if (*(str + i) != ' ')
         {
             *(keep_word + place) = *(str + i); //keep the word
-            if (*(str + i) != '\n'&&*(str + i) != '\r')
+            if (*(str + i) != '\n' && *(str + i) != '\r')
             {
                 place++;
             }
@@ -83,9 +78,15 @@ void subline(char *str, char *word, char tav)
             place = 0;
             memset(keep_word, 0, sizeof WORD); //restart word
         }
-        if (*(str + i + 2) == '\n')
+        if (*(str + i + 2) == '\n' || *(str + i + 2) == '\0')
         {
-            *(keep_word + place) = *(str + i); //keep the word
+            *(keep_word + place) = *(str + i);
+            //keep the word
+            if (*(str + i + 2) == '\0')
+            {
+                place++;
+            }
+            
             if (substr(word, keep_word, place) == true)
             {
                 if (tav == 'b')
@@ -100,13 +101,13 @@ void subline(char *str, char *word, char tav)
             }
             if (correct_word == true && tav == 'a')
             {
-                for (int j = keep_line + 2; j <= i; j++)
+                for (int j = keep_line; j <= i; j++)
                 {
                     putchar(*(str + j));
                 }
                 printf("\n");
             }
-            keep_line = i + 1;                 //keep the location of first char in line
+            keep_line = i + 3;                 //keep the location of first char in line
             place = 0;                         // tell to keep word the place of the char
             memset(keep_word, 0, sizeof WORD); //restart word
             correct_word = false;              //restart to check to next word
