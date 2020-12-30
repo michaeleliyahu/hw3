@@ -12,6 +12,7 @@ int main()
 {
     int input = 0;
     int counter = 0;
+    //get text
     do
     {
         scanf("%d", &input);
@@ -19,17 +20,11 @@ int main()
         counter++;
     } while (counter < LENGTH2);
 
-    // printf("\n\n");
-    // for (int f = 0; f < LENGTH2; f++)
-    // {
-    //     printf("%d , ", ARR2[f]);
-    // }
 
     int *P = &ARR2[0];
     insertion_sort(P, LENGTH2);
 
-    // printf("\n");
-    // printf("array after sort:\n");
+    //print text after sort
     for (int f = 0; f < LENGTH2; f++)
     {
         if (f==LENGTH2-1)

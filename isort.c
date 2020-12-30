@@ -1,10 +1,10 @@
 #include "isort.h"
 #include <stdio.h>
 #include <stdbool.h>
-// #define NULL 0
+
+//move right i char
 void shift_element(int *arr, int i)
 {
-    // printf("%d,%d\n", *(arr), i);
     int *f = arr;
     while (i > 0)
     {
@@ -13,9 +13,10 @@ void shift_element(int *arr, int i)
     }
 
 }
+
+//changed value
 void insertion_sort(int *arr, int len)
 {
-
     for (int i = 1; i < len; i++)
     {
         int j = i - 1;
@@ -35,10 +36,6 @@ void insertion_sort(int *arr, int len)
         int qeep = *(arr + i);
         shift_element((arr + j), i - j);
         *(arr + j) = qeep;
-        // for (int j = 0; j <= len - 1; j++)
-        // {
-        //     printf("%d,", *(arr + j));
-        // }
-        // printf("\n");
+
     }
 }

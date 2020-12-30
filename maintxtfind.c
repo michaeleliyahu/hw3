@@ -11,6 +11,7 @@ int main()
     char word[LINE];
     char h = getc(stdin);
     int g = 0;
+    //get text to str
     while (h != EOF)
     {
         str[g] = h;
@@ -18,28 +19,24 @@ int main()
         h = getc(stdin);
     }
 
-    ///print all arr
-    // for (int i = 0; i < g; i++)
-    // {
-    //     putchar(str[i]);
-    // }
-
-    //get in first line
     int count = 0;
+    //keep the first line from text
     while (str[count + 1] != '\n')
     {
         line[count] = str[count];
         count++;
     }
 
-    // printf("\n");
-
     int i = 0;
     int j = 0;
+
+    //skips of fulty char
     while (line[i] == ' ')
     {
         i++;
     }
+
+
     ////find the word
     while (line[i] != ' ')
     {
@@ -49,6 +46,7 @@ int main()
     }
     char tav;
 
+    //keep the char
     while (line[i] == ' ')
     {
         i++;
