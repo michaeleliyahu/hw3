@@ -36,7 +36,6 @@ int main()
         i++;
     }
 
-
     ////find the word
     while (line[i] != ' ')
     {
@@ -51,6 +50,13 @@ int main()
     {
         i++;
     }
-    tav = line[i];
-    subline(str + count + 4, word, tav);
+    if (line[i] != 'a' && line[i] != 'b')
+    {
+        printf("program %d not exist\n", line[i]);
+    }
+    else
+    {
+        tav = line[i];
+        subline(str + count + 4, word, tav);
+    }
 }
