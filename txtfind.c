@@ -61,7 +61,7 @@ void subline(char *str, char *word, char tav)
         if (*(str + i) != ' ')
         {
             *(keep_word + place) = *(str + i); //keep the word
-            if (*(str + i) != '\n')
+            if (*(str + i) != '\n'&&*(str + i) != '\r')
             {
                 place++;
             }
@@ -107,7 +107,7 @@ void subline(char *str, char *word, char tav)
                 printf("\n");
             }
             keep_line = i + 1;                 //keep the location of first char in line
-            place = -1;                         // tell to keep word the place of the char
+            place = 0;                         // tell to keep word the place of the char
             memset(keep_word, 0, sizeof WORD); //restart word
             correct_word = false;              //restart to check to next word
         }
