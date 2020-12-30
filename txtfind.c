@@ -62,7 +62,8 @@ void subline(char *str, char *word, char tav)
             }
         }
         else
-        {
+        {   
+            //if correct word print it and keep it true that have word in line
             if (substr(word, keep_word, place) == true)
             {
                 if (tav == 'b')
@@ -78,15 +79,20 @@ void subline(char *str, char *word, char tav)
             place = 0;
             memset(keep_word, 0, sizeof WORD); //restart word
         }
+
+        //seprate option for last word or last line
         if (*(str + i + 2) == '\n' || *(str + i + 2) == '\0')
         {
-            *(keep_word + place) = *(str + i);
-            //keep the word
+            *(keep_word + place) = *(str + i); //take word from text
+
+            //if its kast char we need to keep it
             if (*(str + i + 2) == '\0')
             {
-                place++;
+                *(keep_word + place) = *(str + i+1);
+                place++;                
             }
-            
+
+            //if correct word print it and keep it true that have word in line
             if (substr(word, keep_word, place) == true)
             {
                 if (tav == 'b')
@@ -99,9 +105,11 @@ void subline(char *str, char *word, char tav)
                 }
                 correct_word = true; //tell to next step that there is correct word in line
             }
+
+            //if exist correct word in line print it
             if (correct_word == true && tav == 'a')
             {
-                for (int j = keep_line; j <= i; j++)
+                for (int j = keep_line; j <= i+1; j++)
                 {
                     putchar(*(str + j));
                 }
